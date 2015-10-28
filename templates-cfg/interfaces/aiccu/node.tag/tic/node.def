@@ -17,7 +17,8 @@ end:
 				"$VAR(tls/@)" \
 				"$VAR(username/@)" \
 				"$VAR(password/@)" \
-				"$VAR(tunnel/@)"
+				"$VAR(tunnel/@)" \
+                                "$VAR(../defaultroute/@)"
 			;;
 		DELETE)
 			sudo /opt/vyatta/sbin/vyatta-update-aiccu stop \

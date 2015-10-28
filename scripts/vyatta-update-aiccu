@@ -11,7 +11,7 @@ AICCU_BIN=/usr/sbin/aiccu
 function usage() {
 	echo "$0" >&2
 	echo "  create <iface> <alias> |" >&2
-	echo "  start <iface> <server> <requiretls> <user> <pw> <tunnel> |" >&2
+	echo "  start <iface> <server> <requiretls> <user> <pw> <tunnel> <defaultroute> |" >&2
 	echo "  stop <iface> |" >&2
 	echo "  remove <iface>" >&2
 	exit 1
@@ -101,6 +101,7 @@ case "$cfg_action" in
 		cfg_username=$1; shift || usage
 		cfg_password=$1; shift || usage
 		cfg_tunnelid=$1; shift || usage
+		cfg_defaultroute=$1; shift || usage
 		
 		# Generate config & enable
 		mkdir -p $AICCU_VAR
@@ -121,7 +122,7 @@ case "$cfg_action" in
 		 echo "tunnel_id $cfg_tunnelid"
 		 echo "ipv6_interface $cfg_iface"
 		 echo 'automatic true'
-		 echo 'defaultroute false'
+		 echo 'defaultroute $cfg_defaultroute'
 		 echo 'makebeats true'
 		 echo 'daemonize true'
 		 echo 'verbose true'

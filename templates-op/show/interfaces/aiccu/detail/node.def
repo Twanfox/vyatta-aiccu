@@ -1,0 +1,3 @@
+help: Show detailed AICCU interface information
+run: ${vyatta_bindir}/vyatta-show-interfaces.pl --intf-type=aiccu --action=show
+
