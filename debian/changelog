@@ -1,3 +1,21 @@
+
+vyatta-aiccu (1.2) precise; urgency=low
+
+  [ Florian G. Pflug ]
+  * Updated README.md
+  * Replaced literal "<" and "<" with &lt; and &gt; in README.md
+  * Avoid failing during postrm if the aiccu package is already gone.
+  * Improved README.md
+  * Fixed bold/italic mixup in README.md
+
+  [ Twan Fox ]
+  * Source alterations to support VyOS 1.1.x series fork of Vyatta
+  * Removed firewall nodes as redundant (VyOS firewall nodes work fine)
+  * Added default route option to tunnels and updated configure script accordingly
+  * Added operational commands to view link status for aiccu tunnels
+
+ -- Twan Fox <twanfox@gmail.com>  Wed, 28 Oct 2015 17:17:17 -0500
+
 vyatta-aiccu (1.1) precise; urgency=low
 
   * Fixed start and restart behaviour upon configuration changes.
